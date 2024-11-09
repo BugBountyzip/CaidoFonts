@@ -17,50 +17,64 @@
   <hr />
 </div>
 
-# Advanced CSRF PoC Generator Plugin
+# Caido Font Selector Plugin
 
-A powerful CSRF (Cross-Site Request Forgery) proof of concept generator plugin for Caido. This plugin helps security researchers and penetration testers quickly generate various types of CSRF payloads.
+A customizable font management plugin for Caido that allows users to personalize their application's typography and add visual effects to text.
 
 ## Features
 
-The plugin supports multiple CSRF payload types:
-- Standard HTML Form
-- URL-encoded form
-- Multipart form
-- Plain text form
-- SVG-based CSRF
-- XHR-based CSRF
-- Iframe-based CSRF
-- Meta Refresh CSRF
-- WebSocket CSRF
-- Data URI CSRF
+### Built-in Fonts
+- Arial
+- Helvetica
+- Times New Roman
+- Courier New
+- Georgia
+- Palatino
+- Garamond
+- Bookman
+- Comic Sans MS
+- Trebuchet MS
+- Arial Black
+- Impact
+
+### Text Effects
+- None (Default)
+- Shake
+- Random Colors
+- Blur
+- Shadow
+- Gradient
+- 3D
+
+### Custom Font Support
+- Import your own font files
+- File upload support via "Choose File" button
+- Preview text with "I love Caido!" sample
+
 
 ## Usage
 
 1. Install the plugin from Caido's plugin store
-2. Select a request in Caido
-3. Click on the CSRF Generator button
-4. Choose your desired CSRF payload type from the dropdown
-5. The plugin will automatically generate the appropriate CSRF proof of concept code
+2. Navigate to the Font Selector in the plugins menu
+3. Choose from built-in fonts or upload your own:
+   - For built-in fonts: Simply click on the desired font card
+   - For custom fonts: Use the "Choose File" button to upload
+4. Select a text effect from the dropdown menu (optional)
+5. Preview the font with "I love Caido!" sample text
+6. Click "Apply" to set the font throughout Caido
 
-![image](https://github.com/user-attachments/assets/7bc67c9c-efc5-418c-ac45-759ad7e21070)
+## Customization
 
-![image](https://github.com/user-attachments/assets/304f45be-306c-4c90-9103-d3a81660e961)
+You can customize your Caido interface by:
+- Mixing different fonts with text effects
+- Uploading and using custom fonts
 
 
+## License
 
-## Output Example
+This project is licensed under the GPL-3.0 License.
 
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>CSRF PoC</title>
-</head>
-<body>
-    <h3>Standard CSRF PoC</h3>
-    <form action="https://caido.io/" method="get">
-        <!-- Form parameters will be automatically populated -->
-    </form>
-</body>
-</html>
+## Contact
+
+- Join our Discord Server
+- Contact Me for support or feedback
