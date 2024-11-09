@@ -1,0 +1,187 @@
+.font-selector {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: var(--c-bg-default);
+  color: var(--c-fg-default);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.font-selector h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--c-fg-primary);
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+.custom-font-input,
+.effect-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.effect-selector label {
+  color: var(--c-fg-subtle);
+}
+
+.effect-selector select,
+.custom-font-input input[type="file"] {
+  padding: 5px;
+  background-color: var(--c-bg-subtle);
+  color: var(--c-fg-default);
+  border: 1px solid var(--c-border-default);
+  border-radius: 3px;
+}
+
+.font-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.font-item {
+  background-color: var(--c-bg-subtle);
+  padding: 15px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.font-item:hover {
+  background-color: var(--c-bg-inset);
+}
+
+.font-item h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--c-fg-primary);
+}
+
+.font-preview {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  color: var(--c-fg-default);
+}
+
+.apply-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #a0213e; 
+  color: #ffffff; 
+  border: none;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+  background-color: #820c2e;
+}
+
+
+.shake {
+  display: inline-block;
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both infinite;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+.random-colors {
+  animation: random-colors 5s linear infinite;
+}
+
+@keyframes random-colors {
+  0% { color: #ff0000; }
+  14% { color: #ff7f00; }
+  28% { color: #ffff00; }
+  42% { color: #00ff00; }
+  57% { color: #0000ff; }
+  71% { color: #8b00ff; }
+  85% { color: #ff00ff; }
+  100% { color: #ff0000; }
+}
+
+.blur {
+  color: transparent;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.shadow {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.gradient {
+  animation: gradient 5s linear infinite;
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; background-image: linear-gradient(45deg, #ff0000, #ff7f00); }
+  14% { background-image: linear-gradient(45deg, #ff7f00, #ffff00); }
+  28% { background-image: linear-gradient(45deg, #ffff00, #00ff00); }
+  42% { background-image: linear-gradient(45deg, #00ff00, #0000ff); }
+  57% { background-image: linear-gradient(45deg, #0000ff, #8b00ff); }
+  71% { background-image: linear-gradient(45deg, #8b00ff, #ff00ff); }
+  85% { background-image: linear-gradient(45deg, #ff00ff, #ff0000); }
+  100% { background-position: 100% 50%; background-image: linear-gradient(45deg, #ff0000, #ff7f00); }
+}
+
+.three-d {
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+
+
+@media screen and (max-width: 600px) {
+  .font-list {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-font-input,
+  .effect-selector {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .effect-selector select,
+  .custom-font-input input[type="file"] {
+    width: 100%;
+  }
+}
+
+
+.apply-button:focus,
+.effect-selector select:focus,
+.custom-font-input input[type="file"]:focus {
+  outline: 2px solid #a0213e;
+  outline-offset: 2px;
+}
+
+
+.font-item:hover .font-preview {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
